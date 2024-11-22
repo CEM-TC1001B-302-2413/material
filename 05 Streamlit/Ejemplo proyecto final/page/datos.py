@@ -11,8 +11,14 @@ def cargar_datos_csv(nombre_archivo):
     df = pd.read_csv(nombre_archivo)
     return df
 
+def cargar_respuestas():
+    df = pd.read_csv("data/respuestas.csv")
+    return df
+
 df1 = cargar_datos_excel("data/datos.xlsx")
 df2 = cargar_datos_csv("data/datos.csv")
+df_mapa = cargar_datos_csv("data/mapa.csv")
+df_respuestas = cargar_respuestas()
 
 st.title("Muestra de datos")
 
@@ -21,6 +27,10 @@ st.caption("Tomado de...")
 
 st.dataframe(df2)
 st.caption("Tomado de...")
+
+st.subheader("Respuestas de mi formulario")
+st.dataframe(df_respuestas)
+st.caption("Respuestas del formulario incluido en este sitio")
 
 st.subheader("Estadísticas")
 
@@ -49,6 +59,18 @@ c3.metric("Inscritos",
 
 st.bar_chart(df2, x="Nombre", y="Calificación")
 
+st.scatter_chart(df2, x="Matrícula", y="Calificación")
+
+st.line_chart(df2, x="Matrícula", y="Calificación")
+
+st.subheader("Mapa de México")
+
+st.dataframe(df_mapa)
+
+st.map(df_mapa,
+       latitude="Latitud",
+       longitude="Longitud",
+       color="Color")
 
 
 

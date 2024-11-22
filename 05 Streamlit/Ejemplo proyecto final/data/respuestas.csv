@@ -1,0 +1,2 @@
+Nombre,Edad,Género,Estado de la república,Casa,Departamento,Automóvil,Motocicleta,Víctima de delito,Tipos de delito,Fecha más reciente,Monto perdido
+Aram,40,Masculino,Campeche,True,True,False,False,True,"['Robo de vehículo', 'Robo de identidad', 'Robo a casa habitación']",2024-11-03,507433
